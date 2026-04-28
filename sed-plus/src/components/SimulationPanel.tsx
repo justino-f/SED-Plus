@@ -1,16 +1,14 @@
-// components/SimulationPanel.tsx
-export function SimulationPanel() {
-  return (
-    <div style={{ marginTop: 20 }}>
-      <h3>Simulation</h3>
-      <div style={{ height: 150, border: "1px solid #ccc" }}>
-        (execution view placeholder)
-      </div>
+import { useAppStore } from '../app/store'
 
-      <h4>Logs</h4>
-      <div style={{ height: 150, border: "1px solid #ccc" }}>
-        (logs placeholder)
-      </div>
+export default function SimulationPanel() {
+  const automaton = useAppStore(s => s.getActiveAutomaton())
+
+  return (
+    <div style={{ padding: 8 }}>
+      <h3>Simulation</h3>
+      <pre>
+        {JSON.stringify(automaton, null, 2)}
+      </pre>
     </div>
   )
 }

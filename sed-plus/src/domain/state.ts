@@ -3,6 +3,4 @@ export interface State {
   label: string
   x: number
   y: number
-  isInitial?: boolean
-  isFinal?: boolean
 }
